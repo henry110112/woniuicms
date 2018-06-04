@@ -19,7 +19,7 @@ public class ClassController {
 	public String sucess(Model model){
 		List<Class> list = classService.list();
 		model.addAttribute("p",list);
-		System.out.println("运行了");
+		System.out.println("运行了一次哦");
 		return "sucess";
 	}
 }
