@@ -32,10 +32,10 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="typeAliasesPackage" value="com.woniuxy.po" />
 		<property name="dataSource" ref="dataSource"/>
-		<property name="mapperLocations" value="classpath:com/woniuxy/mapper/*.xml"/>
+		<property name="mapperLocations" value="classpath:Mapper/*.xml"/>
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.woniuxy.mapper"/>
+		<property name="basePackage" value="com.woniuxy.dao"/>
 	</bean>
 </beans>
