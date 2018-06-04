@@ -6,20 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.woniuxy.po.Class;
-import com.woniuxy.service.ClassService;
+import com.woniuxy.po.UserPO;
+import com.woniuxy.service.UserService;
 
 @Controller
 @RequestMapping("")
 public class ClassController {
 	@Autowired
-	private ClassService classService;
+	private UserService userService;
 	
 	@RequestMapping(value="hello") 
 	public String sucess(Model model){
-		List<Class> list = classService.list();
+		List<UserPO> list = userService.list();
 		model.addAttribute("p",list);
-		System.out.println("运行了一次哦");
+		System.out.println("运行了");
 		return "sucess";
 	}
 }
