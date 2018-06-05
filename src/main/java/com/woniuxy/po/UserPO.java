@@ -1,5 +1,8 @@
 package com.woniuxy.po;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserPO {
 	private String user_id;
 	private String login;

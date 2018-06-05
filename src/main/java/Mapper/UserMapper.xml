@@ -6,4 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="list"  resultType="UserPO">
 		SELECT * FROM user 
 	</select>
+	<select id="findPass"  parameterType="UserPO"   resultType="string">
+		SELECT password FROM user WHERE login=#{login}
+	</select>
 </mapper>  

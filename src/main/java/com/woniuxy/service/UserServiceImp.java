@@ -12,8 +12,26 @@ public class UserServiceImp implements UserService{
 	
 	@Autowired
 	private UserDAO userDAO;
+	
 	@Override
 	public List<UserPO> list() {	
 		return userDAO.list();	
+	}
+	
+	@Override
+	public String checkLogin(UserPO userPO) {
+		String result="";
+		String pass=userDAO.findPass(userPO);
+		if(pass==null){
+			result="账号不存在，登陆失败";
+			return result;
+		}
+		if(pass.equals(userPO.getPassword())){
+			result="登陆成功";
+		}
+		else{
+			result="密码错误，登陆失败";
+		}
+		return result;
 	}
 }

@@ -22,9 +22,9 @@ private UserService userService;
 @Test
 public void testList() {
 	System.out.println(userService);
-	List<UserPO> cs=userService.list();
-	for (UserPO c : cs) {
-		System.out.println(c);
-	}
+	UserPO userPO = new UserPO();
+	userPO.setLogin("admindd");
+	userPO.setPassword("12345");
+	System.out.println(userService.checkLogin(userPO));
 }
 }
